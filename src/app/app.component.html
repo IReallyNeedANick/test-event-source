@@ -1,20 +1,116 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="row justify-content-md-left">
 
+    <div class="input-group mb-3 col col-lg-12">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+      </div>
+      <input #inp type="text" class="form-control" [value]="url" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="updateUrl(inp)" type="button">stream</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p *ngFor="let task of tasks">
+  <ng-container *ngIf="task['mtaskId']">
+    <ngb-alert [type]="'info'" (close)="closeTask(task)">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'mTaskId' | translate }}:</strong> {{ task['mTaskId'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'lifecycleState' | translate }}:</strong> {{ task['lifecycleState'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'preconditionsSatisfied' | translate }}:</strong> {{ task['preconditionsSatisfied'] }}
+          </div>
+          <div class="col col-lg-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+          </div>
+        </div>
+      </div>
+    </ngb-alert>
+  </ng-container>
+  <ng-container *ngIf="task['mTaskPlanId']">
+    <ngb-alert [type]="'primary'" (close)="closeTask(task)">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'mTaskPlanId' | translate }}:</strong> {{ task['mTaskPlanId'] }}
+          </div>
+          <div class="col col-lg-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-6">
+            <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+          </div>
+          <div class="col col-lg-6">
+            <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+          </div>
+        </div>
+      </div>
+    </ngb-alert>
+  </ng-container>
+
+</p>
