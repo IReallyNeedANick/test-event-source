@@ -11,106 +11,105 @@
       </div>
     </div>
   </div>
+  <p *ngFor="let task of tasks">
+    <ng-container *ngIf="task['mtaskId']">
+      <ngb-alert [type]="'info'" (close)="closeTask(task)">
+        <div class="container">
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'mTaskId' | translate }}:</strong> {{ task['mTaskId'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'lifecycleState' | translate }}:</strong> {{ task['lifecycleState'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'preconditionsSatisfied' | translate }}:</strong> {{ task['preconditionsSatisfied'] }}
+            </div>
+            <div class="col col-lg-6">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+            </div>
+          </div>
+        </div>
+      </ngb-alert>
+    </ng-container>
+    <ng-container *ngIf="task['mTaskPlanId']">
+      <ngb-alert [type]="'primary'" (close)="closeTask(task)">
+        <div class="container">
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'mTaskPlanId' | translate }}:</strong> {{ task['mTaskPlanId'] }}
+            </div>
+            <div class="col col-lg-6">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-6">
+              <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
+            </div>
+            <div class="col col-lg-6">
+              <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
+            </div>
+          </div>
+        </div>
+      </ngb-alert>
+    </ng-container>
+
+  </p>
 </div>
-
-<p *ngFor="let task of tasks">
-  <ng-container *ngIf="task['mtaskId']">
-    <ngb-alert [type]="'info'" (close)="closeTask(task)">
-      <div class="container">
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'mTaskId' | translate }}:</strong> {{ task['mTaskId'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'lifecycleState' | translate }}:</strong> {{ task['lifecycleState'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'preconditionsSatisfied' | translate }}:</strong> {{ task['preconditionsSatisfied'] }}
-          </div>
-          <div class="col col-lg-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
-          </div>
-        </div>
-      </div>
-    </ngb-alert>
-  </ng-container>
-  <ng-container *ngIf="task['mTaskPlanId']">
-    <ngb-alert [type]="'primary'" (close)="closeTask(task)">
-      <div class="container">
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'entityVersion' | translate }}:</strong> {{ task['entityVersion'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'time' | translate }}:</strong> {{ task['time'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'description' | translate }}:</strong> {{ task['description'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'entityOrder' | translate }}:</strong> {{ task['entityOrder'] }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'mTaskPlanId' | translate }}:</strong> {{ task['mTaskPlanId'] }}
-          </div>
-          <div class="col col-lg-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-6">
-            <strong>{{ 'id' | translate }} {{ 'ehrHash' | translate }}:</strong> {{ task['ehrHash'] }}
-          </div>
-          <div class="col col-lg-6">
-            <strong>{{ 'id' | translate }} {{ 'entityId' | translate }}:</strong> {{ task['entityId'] }}
-          </div>
-        </div>
-      </div>
-    </ngb-alert>
-  </ng-container>
-
-</p>

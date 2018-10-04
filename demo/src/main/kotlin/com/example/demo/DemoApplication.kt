@@ -76,22 +76,3 @@ data class Id(
   val entityId: String,
   val ehrHash: String
 )
-//{
-//  "entityVersion": 0,
-//  "entityId": "4f17bcdf-55c0-4027-90a5-63843b1ba0ea",
-//  "ehrHash": 155491032,
-//  "time": "2018-09-27T17:27:11.018+02:00",
-//  "description": "Task lifecycle state changed from PLANNED to AVAILABLE",
-//  "entityOrder": 0,
-//  "mTaskId": "fc09510b-0ae9-4780-b32f-cb2b1da85117",
-//  "lifecycleState": "AVAILABLE",
-//  "preconditionsSatisfied": false,
-//  "waitConditionsSatisfied": true,
-//  "lifecycleTransitionReason": null,
-//  "mEntryInstances": [],
-//  "id": {
-//  "entityId": "4f17bcdf-55c0-4027-90a5-63843b1ba0ea",
-//  "ehrHash": 155491032,
-//  "valid": true
-//}
-//}
