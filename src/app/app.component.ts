@@ -7,7 +7,7 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  url = 'http://localhost:8080/test';
+  url = 'http://localhost:8080/testis';
 
   @Input()
   public tasks: Array<Object> = [];
@@ -32,11 +32,6 @@ export class AppComponent implements OnInit {
       waitConditionsSatisfied: "Wait Condition satisfied",
       id: "ID"
     });
-
-    translate.get('time').subscribe((res: string) => {
-      console.log(res);
-      //=> 'hello world'
-    });
   }
 
   public closeTask(task: Object) {
@@ -47,7 +42,7 @@ export class AppComponent implements OnInit {
   updateUrl(event) {
     console.log(event.value);
     this.url = event.value;
-    // this.ngOnInit();
+    this.ngOnInit();
   }
 
 
@@ -62,12 +57,5 @@ export class AppComponent implements OnInit {
       });
     };
 
-  }
-
-  isTask(task: Object) {
-    if (task['mtaskId']) {
-      return true
-    }
-    return false;
   }
 }
