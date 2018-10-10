@@ -7,7 +7,7 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  url = 'http://localhost:8080/testis';
+  url = 'http://localhost:8080/test';
 
   @Input()
   public tasks: Array<Object> = [];
