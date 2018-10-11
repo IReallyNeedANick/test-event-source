@@ -30,7 +30,14 @@ export class AppComponent implements OnInit {
       lifecycleState: "Lifecycle state",
       preconditionsSatisfied: "Precondition satisfied",
       waitConditionsSatisfied: "Wait Condition satisfied",
-      id: "ID"
+      id: "ID",
+      mWorkPlanId: "Work plan ID",
+      materialisedEntityDto: "Materialized entity",
+      definitionId: "definition ID",
+      ownerId: "Owner ID",
+      type: "Type",
+      action: "Action",
+      ehrId: "Ehr ID"
     });
   }
 
@@ -51,11 +58,10 @@ export class AppComponent implements OnInit {
     eventSource.onmessage = (event) => {
       this.zone.run(() => {
         // Do stuff here
-        let json = JSON.parse(event.data);
+        let json = JSON.parse(event.data).event;
         console.info('Received data: ', json);
         this.tasks.push(json);
       });
     };
-
   }
 }

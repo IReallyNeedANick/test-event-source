@@ -38,7 +38,7 @@ class WebFluxConfig {
 }
 @RestController
 open class Test {
-  @GetMapping(value = ["test"], produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
+  @GetMapping(value = ["test"], produces = [MediaType.APPLICATION_STREAM_JSON_VALUE])
   open fun test(): Flux<Task> {
     return Flux.fromStream(List(100) {
       Task(
